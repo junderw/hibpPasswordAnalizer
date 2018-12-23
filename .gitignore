@@ -14,3 +14,5 @@
 *.7z
 *.txt
 hibpPasswordAnalizer
+.~*#
+*.csv
