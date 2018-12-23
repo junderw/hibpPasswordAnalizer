@@ -22,67 +22,23 @@ $ wget https://downloads.pwnedpasswords.com/passwords/pwned-passwords-ordered-by
 $ 7z x pwned-passwords-ordered-by-count.7z
 $ ./hibpPasswordAnalizer pwned-passwords-ordered-by-count.txt
 # Run at 2018/12/23
-{
-  "10": 33256195,
-  "100": 2005322,
-  "1000": 198624,
-  "10000": 12175,
-  "2": 344791361,
-  "3": 191602470,
-  "4": 124428050,
-  "5": 87246372
-}
-{
-  "10000000": 24,
-  "100000000": 4,
-  "110000000": 4,
-  "120000000": 4,
-  "130000000": 3,
-  "140000000": 3,
-  "150000000": 3,
-  "160000000": 3,
-  "170000000": 3,
-  "180000000": 3,
-  "190000000": 3,
-  "20000000": 15,
-  "200000000": 2,
-  "210000000": 2,
-  "220000000": 2,
-  "230000000": 2,
-  "240000000": 2,
-  "250000000": 2,
-  "260000000": 2,
-  "270000000": 2,
-  "280000000": 2,
-  "290000000": 2,
-  "30000000": 10,
-  "300000000": 2,
-  "310000000": 2,
-  "320000000": 2,
-  "330000000": 2,
-  "340000000": 2,
-  "350000000": 1,
-  "360000000": 1,
-  "370000000": 1,
-  "380000000": 1,
-  "390000000": 1,
-  "40000000": 8,
-  "400000000": 1,
-  "410000000": 1,
-  "420000000": 1,
-  "430000000": 1,
-  "440000000": 1,
-  "450000000": 1,
-  "460000000": 1,
-  "470000000": 1,
-  "480000000": 1,
-  "490000000": 1,
-  "50000000": 7,
-  "500000000": 1,
-  "510000000": 1,
-  "60000000": 6,
-  "70000000": 5,
-  "80000000": 5,
-  "90000000": 4
-}
+517238891 passwords were leaked      1 times or more
+344791361 passwords were leaked      2 times or more
+191602470 passwords were leaked      3 times or more
+124428050 passwords were leaked      4 times or more
+ 87246372 passwords were leaked      5 times or more
+ 65670784 passwords were leaked      6 times or more
+ 52376695 passwords were leaked      7 times or more
+ 44035113 passwords were leaked      8 times or more
+ 37712431 passwords were leaked      9 times or more
+ 33256195 passwords were leaked     10 times or more
+  4476068 passwords were leaked     50 times or more
+  2005322 passwords were leaked    100 times or more
+   410333 passwords were leaked    500 times or more
+   198624 passwords were leaked   1000 times or more
+    29216 passwords were leaked   5000 times or more
+    12175 passwords were leaked  10000 times or more
+     1595 passwords were leaked  50000 times or more
+      566 passwords were leaked 100000 times or more
+
 ```

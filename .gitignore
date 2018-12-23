@@ -11,6 +11,6 @@
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
-pwned-passwords-*.7z
-pwned-passwords-*.txt
+*.7z
+*.txt
 hibpPasswordAnalizer

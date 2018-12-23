@@ -2,7 +2,6 @@ package main
 
 import (
 	"bufio"
-	"encoding/json"
 	"fmt"
 	"log"
 	"os"
@@ -10,18 +9,32 @@ import (
 	"strings"
 )
 
-var importantNumbers map[int]int = map[int]int{
-	10000: 0,
-	1000:  0,
-	100:   0,
-	10:    0,
-	5:     0,
-	4:     0,
-	3:     0,
-	2:     0,
+var importantNumbers map[int]int = map[int]int{}
+
+var targetsList []int = []int{
+	100000,
+	50000,
+	10000,
+	5000,
+	1000,
+	500,
+	100,
+	50,
+	10,
+	9,
+	8,
+	7,
+	6,
+	5,
+	4,
+	3,
+	2,
+	1,
 }
 
-var importantCounts map[int]int = map[int]int{}
+var keys []int = []int{}
+
+var targetIndex int = 0
 
 var i int = 0
 
@@ -41,25 +54,28 @@ func main() {
 		line := strings.Split(scanner.Text(), ":")
 		count, _ := strconv.Atoi(line[1])
 
-		if _, ok := importantNumbers[count]; ok {
-			importantNumbers[count] = i
+		if count < targetsList[targetIndex] {
+			keys = append(keys, targetsList[targetIndex])
+			targetIndex++
 		}
+		importantNumbers[targetsList[targetIndex]] = i
 		if i%10000000 == 0 {
 			fmt.Println(i)
-			importantCounts[i] = count
 		}
 	}
+	// for the final 1
+	keys = append(keys, targetsList[targetIndex])
+	reverse(&keys)
 	if err := scanner.Err(); err != nil {
 		log.Fatal(err)
 	}
-	importantNumbersOut, err := json.MarshalIndent(importantNumbers, "", "  ")
-	if err != nil {
-		log.Fatal(err)
+	for _, k := range keys {
+		fmt.Printf("%9v passwords were leaked %6v times or more\n", importantNumbers[k], k)
 	}
-	importantCountsOut, err := json.MarshalIndent(importantCounts, "", "  ")
-	if err != nil {
-		log.Fatal(err)
+}
+
+func reverse(s *[]int) {
+	for i, j := 0, len(*s)-1; i < j; i, j = i+1, j-1 {
+		(*s)[i], (*s)[j] = (*s)[j], (*s)[i]
 	}
-	fmt.Printf("%v\n", string(importantNumbersOut))
-	fmt.Printf("%v\n", string(importantCountsOut))
 }
